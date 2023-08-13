@@ -37,7 +37,7 @@
 		F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F1E4B0262A83030B003BE4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E4B0292A83030B003BE4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F1E4B02B2A83030B003BE4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E4B02B2A83030B003BE4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GithubFollowers/Supports/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1D498A62A890EEC007118BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1D498A42A89010A007118BA /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1D498A72A890F25007118BA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F1482A192A844DF800928153 /* FavoritesListVC.swift */,
+				F1482A172A844D9800928153 /* SearchVC.swift */,
+				F17C4B3F2A88502B002401E6 /* FollowerListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F1D498A82A890F3B007118BA /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1482A1B2A8459CB00928153 /* GFButton.swift */,
+				F1482A1D2A845C8A00928153 /* GFTextField.swift */,
+				F1D4989E2A88F78F007118BA /* GFTitleLabel.swift */,
+				F1D498A02A88F93C007118BA /* GFBodyLabel.swift */,
+				F1D498A22A88FA30007118BA /* GFAlertVC.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F1D498A92A890F62007118BA /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				F1E4B01D2A83030A003BE4B0 /* AppDelegate.swift */,
+				F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */,
+				F1E4B0262A83030B003BE4B0 /* Assets.xcassets */,
+				F1E4B0282A83030B003BE4B0 /* LaunchScreen.storyboard */,
+				F1E4B02B2A83030B003BE4B0 /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
 		F1E4B0112A83030A003BE4B0 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +112,10 @@
 		F1E4B01C2A83030A003BE4B0 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				F1482A192A844DF800928153 /* FavoritesListVC.swift */,
-				F1482A172A844D9800928153 /* SearchVC.swift */,
-				F1E4B01D2A83030A003BE4B0 /* AppDelegate.swift */,
-				F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */,
-				F1E4B0262A83030B003BE4B0 /* Assets.xcassets */,
-				F1E4B0282A83030B003BE4B0 /* LaunchScreen.storyboard */,
-				F1E4B02B2A83030B003BE4B0 /* Info.plist */,
-				F1482A1B2A8459CB00928153 /* GFButton.swift */,
-				F1482A1D2A845C8A00928153 /* GFTextField.swift */,
-				F17C4B3F2A88502B002401E6 /* FollowerListVC.swift */,
-				F1D4989E2A88F78F007118BA /* GFTitleLabel.swift */,
-				F1D498A02A88F93C007118BA /* GFBodyLabel.swift */,
-				F1D498A22A88FA30007118BA /* GFAlertVC.swift */,
-				F1D498A42A89010A007118BA /* UIViewController+Ext.swift */,
+				F1D498A92A890F62007118BA /* Supports */,
+				F1D498A62A890EEC007118BA /* Extensions */,
+				F1D498A82A890F3B007118BA /* Custom Views */,
+				F1D498A72A890F25007118BA /* Screens */,
 			);
 			path = GithubFollowers;
 			sourceTree = "<group>";
@@ -309,7 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6938DY6DS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GithubFollowers/Info.plist;
+				INFOPLIST_FILE = GithubFollowers/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -339,7 +371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6938DY6DS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GithubFollowers/Info.plist;
+				INFOPLIST_FILE = GithubFollowers/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
