@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13F07B22A8AC9E600848C7B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F07B12A8AC9E600848C7B /* NetworkManager.swift */; };
+		F13F07B52A8ADC4700848C7B /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F07B42A8ADC4700848C7B /* ErrorMessage.swift */; };
 		F1482A182A844D9800928153 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1482A172A844D9800928153 /* SearchVC.swift */; };
 		F1482A1A2A844DF800928153 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1482A192A844DF800928153 /* FavoritesListVC.swift */; };
 		F1482A1C2A8459CB00928153 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1482A1B2A8459CB00928153 /* GFButton.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F13F07B12A8AC9E600848C7B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F13F07B42A8ADC4700848C7B /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		F1482A172A844D9800928153 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		F1482A192A844DF800928153 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		F1482A1B2A8459CB00928153 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
@@ -55,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F13F07B02A8AC9D800848C7B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F13F07B12A8AC9E600848C7B /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F13F07B32A8ADC3C00848C7B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F13F07B42A8ADC4700848C7B /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		F17170962A89813F0085694D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +145,8 @@
 		F1E4B01C2A83030A003BE4B0 /* GithubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				F13F07B32A8ADC3C00848C7B /* Utilities */,
+				F13F07B02A8AC9D800848C7B /* Managers */,
 				F17170962A89813F0085694D /* Models */,
 				F1D498A92A890F62007118BA /* Supports */,
 				F1D498A62A890EEC007118BA /* Extensions */,
@@ -211,9 +233,11 @@
 				F1482A182A844D9800928153 /* SearchVC.swift in Sources */,
 				F1D498A32A88FA30007118BA /* GFAlertVC.swift in Sources */,
 				F1D498A12A88F93C007118BA /* GFBodyLabel.swift in Sources */,
+				F13F07B52A8ADC4700848C7B /* ErrorMessage.swift in Sources */,
 				F171709A2A89819A0085694D /* Follower.swift in Sources */,
 				F1D4989F2A88F78F007118BA /* GFTitleLabel.swift in Sources */,
 				F17170982A8981480085694D /* User.swift in Sources */,
+				F13F07B22A8AC9E600848C7B /* NetworkManager.swift in Sources */,
 				F17C4B402A88502B002401E6 /* FollowerListVC.swift in Sources */,
 				F1E4B01E2A83030A003BE4B0 /* AppDelegate.swift in Sources */,
 				F1E4B0202A83030A003BE4B0 /* SceneDelegate.swift in Sources */,
