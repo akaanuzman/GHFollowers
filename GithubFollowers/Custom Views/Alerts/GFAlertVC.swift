@@ -8,7 +8,6 @@
 import UIKit
 
 class GFAlertVC: UIViewController {
-    
     let containerView = UIView()
     let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(textAlignment: .center)
@@ -27,6 +26,7 @@ class GFAlertVC: UIViewController {
         self.buttonTitle = buttonTitle
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,7 +40,7 @@ class GFAlertVC: UIViewController {
         configureMessageLabel()
     }
     
-    func configureContainerView() -> Void {
+    func configureContainerView() {
         view.addSubview(containerView)
         containerView.backgroundColor = .systemBackground
         containerView.layer.cornerRadius = 16
@@ -54,10 +54,9 @@ class GFAlertVC: UIViewController {
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 220)
         ])
-        
     }
     
-    func configureTitleLabel() -> Void {
+    func configureTitleLabel() {
         containerView.addSubview(titleLabel)
         titleLabel.text = alertTitle ?? "Somenthing went wrong"
         
@@ -69,7 +68,7 @@ class GFAlertVC: UIViewController {
         ])
     }
     
-    func configureActionButton() -> Void {
+    func configureActionButton() {
         containerView.addSubview(actionButton)
         actionButton.setTitle(buttonTitle ?? "OK", for: .normal)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
@@ -82,7 +81,7 @@ class GFAlertVC: UIViewController {
         ])
     }
     
-    func configureMessageLabel() -> Void {
+    func configureMessageLabel() {
         containerView.addSubview(messageLabel)
         messageLabel.text = message ?? "Unable to complate request"
         messageLabel.numberOfLines = 4
@@ -91,11 +90,11 @@ class GFAlertVC: UIViewController {
             messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12),
+            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
     
-    @objc func dismissVC() -> Void {
+    @objc func dismissVC() {
         dismiss(animated: true)
     }
 }

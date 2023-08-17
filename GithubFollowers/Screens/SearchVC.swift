@@ -28,12 +28,12 @@ class SearchVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    func createDismissKeyboardTapGesture() {
+    private func createDismissKeyboardTapGesture() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
-    @objc func pushFollowersListVC() {
+    @objc private func pushFollowersListVC() {
         guard isUsernameEntered else {
             presentGFAlertOnMainThread(title: "Empty username!", message: "Please enter a username. We need to know who to look for 😄", buttonTitle: "OK")
             return
@@ -44,7 +44,7 @@ class SearchVC: UIViewController {
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
-    func configureLogoImageView() {
+    private func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "gh-logo")

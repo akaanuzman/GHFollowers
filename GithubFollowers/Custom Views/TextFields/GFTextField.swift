@@ -8,18 +8,18 @@
 import UIKit
 
 class GFTextField: UITextField {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
     // this is a storyboard required initializer
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() -> Void {
+    private func configure() {
         translatesAutoresizingMaskIntoConstraints = false // disable auto constraints
         
         layer.cornerRadius = 10
@@ -38,5 +38,4 @@ class GFTextField: UITextField {
         returnKeyType = .go
         placeholder = "Enter a username"
     }
-
 }
