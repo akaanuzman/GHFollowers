@@ -10,7 +10,6 @@ import SwiftUI
 
 class FollowerCell: UICollectionViewCell {
     static let reuseID: String = "FollowerCell"
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
