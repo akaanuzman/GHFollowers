@@ -31,12 +31,12 @@ class FollowerListVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func configureViewController() {
+    private func configureViewController() -> Void {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true // appbar large title centerTtile false for flutter codes
     }
     
-    private func configureCollectionView() {
+    private func configureCollectionView() -> Void {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.delegate = self
@@ -44,14 +44,21 @@ class FollowerListVC: UIViewController {
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
     
-    private func getFollowers(username: String, page: Int) {
+    private func getFollowers(username: String, page: Int) -> Void {
+        showLoadingView()
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else { return }
-            
+            self.dismissLoadingView()
             switch result {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollwers = false }
                 self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                    let message = "This user dosen't have any followers. Go follow them 😀"
+                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+                }
+                
                 self.updateData()
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff", message: error.rawValue, buttonTitle: "OK")
@@ -59,7 +66,7 @@ class FollowerListVC: UIViewController {
         }
     }
     
-    private func configureDataSource() {
+    private func configureDataSource() -> Void {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
             cell.set(follower: follower)
@@ -67,7 +74,7 @@ class FollowerListVC: UIViewController {
         })
     }
     
-    private func updateData() {
+    private func updateData() -> Void {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
