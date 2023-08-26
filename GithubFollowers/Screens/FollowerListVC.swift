@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListVCDelegate: AnyObject {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowerListVC: UIViewController {
     enum Section { case main }
     
@@ -14,7 +18,7 @@ class FollowerListVC: UIViewController {
     var followers: [Follower] = []
     var filteredFollowers: [Follower] = []
     var page: Int = 1
-    var hasMoreFollwers: Bool = true
+    var hasMoreFollowers: Bool = true
     var isSearching: Bool = false
     
     var collectionView: UICollectionView!
@@ -65,7 +69,7 @@ class FollowerListVC: UIViewController {
             self.dismissLoadingView()
             switch result {
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollwers = false }
+                if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 
                 if self.followers.isEmpty {
@@ -103,7 +107,7 @@ extension FollowerListVC: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollwers else { return }
+            guard hasMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
@@ -137,8 +141,24 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate, UITextFi
         let follower = activeArray[indexPath.item]
         let destinationVC = UserInfoVC()
         destinationVC.username = follower.login
+        destinationVC.delegate = self
         let navigationController = UINavigationController(rootViewController: destinationVC)
         
         present(navigationController, animated: true)
+    }
+}
+
+extension FollowerListVC: FollowerListVCDelegate {
+    func didRequestFollowers(for username: String) {
+        // get followers for that username
+        self.username = username
+        title = username
+        page = 1
+        hasMoreFollowers = true
+        isSearching = false
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        getFollowers(username: username, page: page)
     }
 }
