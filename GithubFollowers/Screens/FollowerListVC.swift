@@ -15,8 +15,8 @@ class FollowerListVC: UIViewController {
     enum Section { case main }
     
     var username: String!
-    var followers: [Follower] = []
-    var filteredFollowers: [Follower] = []
+    lazy var followers: [Follower] = [] // i used lazy stored properties for improve performance
+    lazy var filteredFollowers: [Follower] = [] // lazy stored properties for improve performance
     var page: Int = 1
     var hasMoreFollowers: Bool = true
     var isSearching: Bool = false
@@ -42,6 +42,36 @@ class FollowerListVC: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true // appbar large title centerTtile false for flutter codes
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func addButtonTapped() {
+       showLoadingView()
+        
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let user):
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                
+                PersistenceManager.updateWith(on: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    
+                    guard let error = error else {
+                        self.presentGFAlertOnMainThread(title: "Success!", message: "You have successfully favorites this user 🎉", buttonTitle: "Hooray!")
+                        return
+                    }
+                    
+                    self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                }
+                
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
     
     private func configureCollectionView() {
@@ -56,7 +86,9 @@ class FollowerListVC: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+
         searchController.searchBar.searchTextField.delegate = self // MARK: for UISearchBar handle x button pressed
+
         searchController.searchBar.placeholder = "Search for a username"
         searchController.obscuresBackgroundDuringPresentation = false // When Searchcontroller is clicked, removes light dimming applied to CollectionView
         navigationItem.searchController = searchController
@@ -123,13 +155,13 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate, UITextFi
         updateData(on: filteredFollowers)
     }
     
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
         updateData(on: followers)
     }
     
     // MARK: UISearchBar handle x button pressed
+
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         isSearching = false
         updateData(on: followers)

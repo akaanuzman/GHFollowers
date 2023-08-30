@@ -5,9 +5,9 @@
 //  Created by Kaan Uzman on 24/8/23.
 //
 
-import SafariServices
 import UIKit
 
+/// For UserInfoVC buttons to event handling
 protocol UserInfoVCDelegate: AnyObject {
     func didTapGitHubProfile(for user: User)
     func didTapGetFollwers(for user: User)
@@ -20,8 +20,9 @@ class UserInfoVC: UIViewController {
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
     let dateLabel = GFBodyLabel(textAlignment: .center)
-    var itemViews: [UIView] = []
+    lazy var itemViews: [UIView] = []
     
+    /// It is used to exit the screen when the get followers button is clicked and access the relevant user's information again.
     weak var delegate: FollowerListVCDelegate!
 
     override func viewDidLoad() {

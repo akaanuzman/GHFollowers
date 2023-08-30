@@ -40,6 +40,7 @@
 		F1E4B0202A83030A003BE4B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */; };
 		F1E4B0272A83030B003BE4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E4B0262A83030B003BE4B0 /* Assets.xcassets */; };
 		F1E4B02A2A83030B003BE4B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E4B0282A83030B003BE4B0 /* LaunchScreen.storyboard */; };
+		F1E8049C2A9EB93200A8E6F6 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8049B2A9EB93200A8E6F6 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		F1E4B0262A83030B003BE4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1E4B0292A83030B003BE4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1E4B02B2A83030B003BE4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GithubFollowers/Supports/Info.plist; sourceTree = SOURCE_ROOT; };
+		F1E8049B2A9EB93200A8E6F6 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				F13F07B12A8AC9E600848C7B /* NetworkManager.swift */,
+				F1E8049B2A9EB93200A8E6F6 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				F1D4989F2A88F78F007118BA /* GFTitleLabel.swift in Sources */,
 				F19893742A8EDC5A00572DDD /* FollowerView.swift in Sources */,
 				F1662E432A97FDFE0079697B /* GFUserInfoHeaderVC.swift in Sources */,
+				F1E8049C2A9EB93200A8E6F6 /* PersistenceManager.swift in Sources */,
 				F186DF052A9AB21B00D49238 /* String+Ext.swift in Sources */,
 				F1662E412A97FD7D0079697B /* GFSecondaryTitleLabel.swift in Sources */,
 				F17170982A8981480085694D /* User.swift in Sources */,

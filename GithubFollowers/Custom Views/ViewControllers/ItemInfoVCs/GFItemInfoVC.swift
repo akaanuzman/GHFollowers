@@ -14,6 +14,8 @@ class GFItemInfoVC: UIViewController {
     let actionButton = GFButton()
 
     var user: User!
+    
+    /// Used to event handling  for one item in button click
     weak var delegate: UserInfoVCDelegate!
 
     init(user: User) {
