@@ -36,6 +36,7 @@
 		F1D498A32A88FA30007118BA /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D498A22A88FA30007118BA /* GFAlertVC.swift */; };
 		F1D498A52A89010A007118BA /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D498A42A89010A007118BA /* UIViewController+Ext.swift */; };
 		F1D591A62A96E22C007EBC89 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D591A52A96E22C007EBC89 /* UserInfoVC.swift */; };
+		F1DC111F2A9FF04100CBBA82 /* FavoriteCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC111E2A9FF04100CBBA82 /* FavoriteCellTableViewCell.swift */; };
 		F1E4B01E2A83030A003BE4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4B01D2A83030A003BE4B0 /* AppDelegate.swift */; };
 		F1E4B0202A83030A003BE4B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */; };
 		F1E4B0272A83030B003BE4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E4B0262A83030B003BE4B0 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		F1D498A22A88FA30007118BA /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
 		F1D498A42A89010A007118BA /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F1D591A52A96E22C007EBC89 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		F1DC111E2A9FF04100CBBA82 /* FavoriteCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellTableViewCell.swift; sourceTree = "<group>"; };
 		F1E4B01A2A83030A003BE4B0 /* GithubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E4B01D2A83030A003BE4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E4B01F2A83030A003BE4B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		F13F07B62A8B04EB00848C7B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F1DC111D2A9FF02100CBBA82 /* FavroiteCell */,
 				F19893722A8EDC4900572DDD /* FollowerCell */,
 			);
 			path = Cells;
@@ -263,6 +266,14 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		F1DC111D2A9FF02100CBBA82 /* FavroiteCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1DC111E2A9FF04100CBBA82 /* FavoriteCellTableViewCell.swift */,
+			);
+			path = FavroiteCell;
+			sourceTree = "<group>";
+		};
 		F1E4B0112A83030A003BE4B0 = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +399,7 @@
 				F186DF052A9AB21B00D49238 /* String+Ext.swift in Sources */,
 				F1662E412A97FD7D0079697B /* GFSecondaryTitleLabel.swift in Sources */,
 				F17170982A8981480085694D /* User.swift in Sources */,
+				F1DC111F2A9FF04100CBBA82 /* FavoriteCellTableViewCell.swift in Sources */,
 				F186DEFC2A9A9F0100D49238 /* GFItemInfoVC.swift in Sources */,
 				F13F07B22A8AC9E600848C7B /* NetworkManager.swift in Sources */,
 				F17D32ED2A940AC4008F19F7 /* UIHelper.swift in Sources */,

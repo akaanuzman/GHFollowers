@@ -21,7 +21,8 @@ class UserInfoVC: UIViewController {
     let itemViewTwo = UIView()
     let dateLabel = GFBodyLabel(textAlignment: .center)
     lazy var itemViews: [UIView] = []
-    
+    var favorite: Follower?
+
     /// It is used to exit the screen when the get followers button is clicked and access the relevant user's information again.
     weak var delegate: FollowerListVCDelegate!
 
@@ -35,7 +36,8 @@ class UserInfoVC: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-        navigationItem.rightBarButtonItem = doneButton
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItems = [doneButton, addButton]
     }
 
     private func layoutUI() {
@@ -76,6 +78,7 @@ class UserInfoVC: UIViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async { self.configureUIElements(with: user) }
+                favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
@@ -106,6 +109,15 @@ class UserInfoVC: UIViewController {
     @objc private func dismissVC() {
         dismiss(animated: true)
     }
+
+    @objc private func addButtonTapped() {
+        guard let favorite = favorite else {
+            presentGFAlertOnMainThread(title: "Something went wrong!", message: "", buttonTitle: "Ok")
+            return
+        }
+        
+        addFavoritesList(on: favorite)
+    }
 }
 
 extension UserInfoVC: UserInfoVCDelegate {
@@ -116,7 +128,7 @@ extension UserInfoVC: UserInfoVCDelegate {
             presentGFAlertOnMainThread(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
             return
         }
-        
+
         delegate.didRequestFollowers(for: user.login)
         dismissVC()
     }
