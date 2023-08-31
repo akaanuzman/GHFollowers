@@ -72,7 +72,7 @@ extension UIViewController {
         present(safariVC, animated: true)
     }
     
-    func addFavoritesList(on favorite: Follower) {
+    func addFollowerToFavoriteList(on favorite: Follower) {
         PersistenceManager.updateWith(on: favorite, actionType: .add) { [weak self] error in
             guard let self = self else { return }
             

@@ -116,7 +116,7 @@ class UserInfoVC: UIViewController {
             return
         }
         
-        addFavoritesList(on: favorite)
+        addFollowerToFavoriteList(on: favorite)
     }
 }
 

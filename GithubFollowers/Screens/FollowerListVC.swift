@@ -23,7 +23,18 @@ class FollowerListVC: UIViewController {
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
-
+    
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        title = username
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -47,7 +58,7 @@ class FollowerListVC: UIViewController {
     }
     
     @objc func addButtonTapped() {
-       showLoadingView()
+        showLoadingView()
         
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
@@ -57,7 +68,7 @@ class FollowerListVC: UIViewController {
             case .success(let user):
                 let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
                 
-                self.addFavoritesList(on: favorite)
+                self.addFollowerToFavoriteList(on: favorite)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
