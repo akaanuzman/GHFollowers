@@ -11,7 +11,7 @@ protocol FollowerListVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: GFDataLoadingVC {
     enum Section { case main }
     
     var username: String!
@@ -58,7 +58,7 @@ class FollowerListVC: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        showLoadingView()
+        self.showLoadingView()
         
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
