@@ -7,7 +7,20 @@
 
 import UIKit
 
+/// For UserInfoVC buttons to event handling
+protocol GFRepoItemVCDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+}
+
 class GFRepoItemVC: GFItemInfoVC {
+    
+    /// Used to event handling  for one item in button click
+    weak var delegate: GFRepoItemVCDelegate!
+    
+    init(user: User ,delegate: GFRepoItemVCDelegate) {
+        super.init(user: user)
+        self.delegate = delegate
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

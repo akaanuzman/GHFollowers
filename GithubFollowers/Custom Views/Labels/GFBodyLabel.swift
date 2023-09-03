@@ -27,6 +27,7 @@ class GFBodyLabel: UILabel {
         textColor = .secondaryLabel
         font = .preferredFont(forTextStyle: .body)
         adjustsFontSizeToFitWidth = true
+        adjustsFontForContentSizeCategory = true // dynamic type is open
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping // The value that indicates wrapping occurs at word boundaries, unless the word doesn’t fit on a single line.
         translatesAutoresizingMaskIntoConstraints = false

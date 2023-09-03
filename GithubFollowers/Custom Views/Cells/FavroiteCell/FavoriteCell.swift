@@ -30,12 +30,10 @@ class FavoriteCell: UITableViewCell {
 
             DispatchQueue.main.async { self.avatarImageView.image = image }
         }
-        
     }
 
     private func configure() {
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
+        addSubviews(avatarImageView, usernameLabel)
 
         accessoryType = .disclosureIndicator
         let padding: CGFloat = 12

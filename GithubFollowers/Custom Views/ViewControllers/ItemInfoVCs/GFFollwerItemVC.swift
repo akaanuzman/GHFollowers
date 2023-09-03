@@ -7,7 +7,19 @@
 
 import UIKit
 
+/// For UserInfoVC buttons to event handling
+protocol GFFollowerItemVCDelegate: AnyObject {
+    func didTapGetFollwers(for user: User)
+}
+
 class GFFollwerItemVC: GFItemInfoVC {
+    
+    weak var delegate: GFFollowerItemVCDelegate!
+
+    init(user: User ,delegate: GFFollowerItemVCDelegate) {
+        super.init(user: user)
+        self.delegate = delegate
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
