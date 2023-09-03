@@ -5,12 +5,12 @@
 //  Created by Kaan Uzman on 25/8/23.
 //
 
-import Foundation
+import UIKit
 
 enum SFSymbols {
-    static let location = "mappin"
-    static let repos = "archivebox"
-    static let gists = "doc.text"
-    static let followers = "person"
-    static let following = "person.3"
+    static let location = UIImage(systemName: "mappin")
+    static let repos = UIImage(systemName: "archivebox")
+    static let gists = UIImage(systemName: "doc.text")
+    static let followers = UIImage(systemName: "person")
+    static let following = UIImage(systemName: "person.3")
 }

@@ -15,7 +15,7 @@ enum ScreenSize {
 }
 
 #warning("Fix later for new iPhone Models")
-enum DeviceTpyes {
+enum DeviceTypes {
     static let idiom        = UIDevice.current.userInterfaceIdiom
     static let nativeScale  = UIScreen.main.nativeScale
     static let scale        = UIScreen.main.scale
