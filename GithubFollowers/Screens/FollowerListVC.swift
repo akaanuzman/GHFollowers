@@ -99,21 +99,29 @@ class FollowerListVC: GFDataLoadingVC {
             self.dismissLoadingView()
             switch result {
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                
-                if self.followers.isEmpty {
-                    let message = "This user dosen't have any followers. Go follow them 😀"
-                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-                }
-                
-                self.updateData(on: self.followers)
+                self.updateUI(with: followers)
+             
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff", message: error.rawValue, buttonTitle: "OK")
             }
             
             self.isLoadingMoreFollowers = false
         }
+    }
+    
+    private func updateUI(with followers: [Follower]) {
+        if followers.count < 100 { hasMoreFollowers = false }
+        self.followers.append(contentsOf: followers)
+        
+        if self.followers.isEmpty {
+            let message = "This user dosen't have any followers. Go follow them 😀"
+            DispatchQueue.main.async {
+                self.navigationItem.hidesSearchBarWhenScrolling = true
+                self.showEmptyStateView(with: message, in: self.view)
+            }
+        }
+        
+        updateData(on: self.followers)
     }
     
     private func configureDataSource() {
