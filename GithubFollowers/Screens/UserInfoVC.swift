@@ -46,10 +46,10 @@ class UserInfoVC: UIViewController {
         scrollView.addSubview(contentView)
         scrollView.pinToEdges(of: view)
         contentView.pinToEdges(of: scrollView)
-        
+
         NSLayoutConstraint.activate([
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 600)
+            contentView.heightAnchor.constraint(equalToConstant: 600),
         ])
     }
 
@@ -85,16 +85,19 @@ class UserInfoVC: UIViewController {
     }
 
     private func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUserInfo(for: username)
+                configureUIElements(with: user)
                 favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-
-            case .failure(let error):
-                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+            } catch {
+                if let gfError = error as? GFError {
+                    presentGFAlert(title: "Something Went Wrong",
+                                   message: gfError.rawValue,
+                                   buttonTitle: "Ok")
+                } else {
+                    presentDefaultGFAlert()
+                }
             }
         }
     }
@@ -119,7 +122,7 @@ class UserInfoVC: UIViewController {
 
     @objc private func addButtonTapped() {
         guard let favorite = favorite else {
-            presentGFAlertOnMainThread(title: "Something went wrong!", message: "", buttonTitle: "Ok")
+            presentGFAlert(title: "Something went wrong!", message: "", buttonTitle: "Ok")
             return
         }
 
@@ -134,7 +137,7 @@ extension UserInfoVC: GFRepoItemVCDelegate {
 extension UserInfoVC: GFFollowerItemVCDelegate {
     func didTapGetFollwers(for user: User) {
         guard user.followers != 0 else {
-            presentGFAlertOnMainThread(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
+            presentGFAlert(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
             return
         }
 
