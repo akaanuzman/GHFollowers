@@ -24,7 +24,6 @@ class FavoriteCell: UITableViewCell {
 
     func set(favorite: Follower) {
         usernameLabel.text = favorite.login
-        #warning("cached bug!!! fix me later")
         Task {
             let image = await NetworkManager.shared.downloadImage(from: favorite.avatarUrl) ?? avatarImageView.placherholderImage
 
