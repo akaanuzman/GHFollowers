@@ -17,6 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = GFTabBarControler()
         window?.makeKeyAndVisible()
+
+        windowScene.windows.forEach {
+            $0.overrideUserInterfaceStyle = PersistenceManager.isDarkTheme() ? .dark : .light
+        } // this code is to set the theme mode in the application
+
         configureNavigationBar()
     }
 

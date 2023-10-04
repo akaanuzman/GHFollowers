@@ -8,22 +8,40 @@
 import UIKit
 
 class SettingsVC: UIViewController {
+    let stackView = UIStackView()
+    let themeCard = GFThemeCard()
+    let languageCard = GFLanguageCard()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureViewController()
+        setupUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true // appbar large title centerTtile false for flutter codes
     }
-    */
 
+    private func setupUI() {
+        view.addSubviews(themeCard, languageCard)
+
+        themeCard.translatesAutoresizingMaskIntoConstraints = false
+        languageCard.translatesAutoresizingMaskIntoConstraints = false
+
+        let padding: CGFloat = 20
+        let height: CGFloat = 60
+
+        NSLayoutConstraint.activate([
+            themeCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+            themeCard.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            themeCard.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            themeCard.heightAnchor.constraint(equalToConstant: height),
+
+            languageCard.topAnchor.constraint(equalTo: themeCard.bottomAnchor, constant: padding),
+            languageCard.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            languageCard.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            languageCard.heightAnchor.constraint(equalToConstant: height)
+        ])
+    }
 }

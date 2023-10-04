@@ -12,7 +12,10 @@ enum PersistenceActionType { case add; case remove }
 enum PersistenceManager {
     private static let defaults = UserDefaults.standard
 
-    enum Keys { static let favorites = "favorites" }
+    enum Keys {
+        static let favorites = "favorites"
+        static let darkTheme = "darkTheme"
+    }
 
     static func updateWith(on favorite: Follower, actionType: PersistenceActionType, completed: @escaping (GFError?) -> Void) {
         retrieveFavorites { result in
@@ -63,5 +66,15 @@ enum PersistenceManager {
         } catch {
             return .unableToFavorite
         }
+    }
+
+    static func setDarkTheme(to isDark: Bool) {
+        print("Setting dark theme to \(isDark)")
+        
+        defaults.set(isDark, forKey: Keys.darkTheme)
+    }
+
+    static func isDarkTheme() -> Bool {
+        return defaults.bool(forKey: Keys.darkTheme)
     }
 }

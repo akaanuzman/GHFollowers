@@ -187,6 +187,7 @@ extension FollowerListVC: UISearchResultsUpdating {
         updateData(on: filteredFollowers)
     }
     
+    // On tapped follower list item this functions running.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let activeArray = isSearching ? filteredFollowers : followers
         let follower = activeArray[indexPath.item]

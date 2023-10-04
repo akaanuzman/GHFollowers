@@ -10,11 +10,14 @@ import UIKit
 class GFThemeCard: UIView {
     let stackView = UIStackView()
     let titleLabel = GFTitleLabel(textAlignment: .left, fontSize: 20)
+    let secondaryTitleLabel = GFTitleLabel(textAlignment: .right, fontSize: 14)
     let toggle = UISwitch()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureUIView()
+        configureStackView()
+        setupUI()
     }
 
     @available(*, unavailable)
@@ -22,30 +25,57 @@ class GFThemeCard: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func configure() {
-        titleLabel.text = "Theme"
+    private func configureUIView() {
+        titleLabel.text = "Dark Theme"
         backgroundColor = .secondarySystemBackground
         layer.cornerRadius = 10
         clipsToBounds = true
-        
-        
-        addSubview(stackView)
+    }
 
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        toggle.translatesAutoresizingMaskIntoConstraints = false
-
+    private func configureStackView() {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(toggle)
+    }
+
+    private func setupUI() {
+        addSubview(stackView)
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+
+        let padding: CGFloat = 20
 
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
         ])
+        
+        toggle.isOn = PersistenceManager.isDarkTheme()
+        
+        toggle.addTarget(self, action: #selector(switchOnChanged), for: .valueChanged)
+    }
+
+    @objc private func switchOnChanged(switchBtn: UISwitch) {
+        if switchBtn.isOn {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                windowScene.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .dark
+                }
+            }
+
+        } else {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                windowScene.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .light
+                }
+            }
+        }
+
+        PersistenceManager.setDarkTheme(to: switchBtn.isOn)
     }
 }
