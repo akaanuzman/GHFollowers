@@ -51,15 +51,17 @@ extension UIViewController {
             guard let self = self else { return }
             
             guard let error = error else {
-                self.presentGFAlert(title: "Success!",
-                                    message: "You have successfully favorites this user 🎉",
-                                    buttonTitle: "Hooray!")
+                self.presentGFAlert(
+                    title: NSLocalizedString("success", comment: ""),
+                    message: NSLocalizedString("success_added_user", comment: ""),
+                    buttonTitle: NSLocalizedString("hooray", comment: ""))
                 return
             }
             
-            self.presentGFAlert(title: "Something went wrong",
-                                message: error.rawValue,
-                                buttonTitle: "Ok")
+            self.presentGFAlert(
+                title: NSLocalizedString("something_wrong", comment: ""),
+                message: error.rawValue,
+                buttonTitle: NSLocalizedString("ok", comment: ""))
         }
     }
 }

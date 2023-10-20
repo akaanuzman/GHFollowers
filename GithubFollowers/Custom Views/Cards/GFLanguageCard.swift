@@ -37,7 +37,7 @@ class GFLanguageCard: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(uiViewOnTapped))
         addGestureRecognizer(tapGesture)
         
-        titleLabel.text = "Language"
+        titleLabel.text = NSLocalizedString("language", comment: "")
         secondaryTitleLabel.text = "Choose.."
     }
     

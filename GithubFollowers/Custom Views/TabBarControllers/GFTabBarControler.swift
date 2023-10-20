@@ -16,7 +16,7 @@ class GFTabBarControler: UITabBarController {
 
     private func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
-        searchVC.title = "Search"
+        searchVC.title = NSLocalizedString("search", comment: "")
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
 
         return UINavigationController(rootViewController: searchVC)
@@ -24,7 +24,7 @@ class GFTabBarControler: UITabBarController {
 
     private func createFavoritesListNC() -> UINavigationController {
         let favorlitesListVC = FavoritesListVC()
-        favorlitesListVC.title = "Favorites"
+        favorlitesListVC.title = NSLocalizedString("favorites", comment: "")
         favorlitesListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
 
         return UINavigationController(rootViewController: favorlitesListVC)
@@ -32,10 +32,11 @@ class GFTabBarControler: UITabBarController {
 
     private func createSettingsNC() -> UINavigationController {
         let settingsVC = SettingsVC()
-        settingsVC.title = "Settings"
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings",
-                                             image: SFSymbols.settings,
-                                             selectedImage: SFSymbols.settings)
+        settingsVC.title = NSLocalizedString("settings", comment: "")
+        settingsVC.tabBarItem = UITabBarItem(
+            title: NSLocalizedString("settings", comment: ""),
+            image: SFSymbols.settings,
+            selectedImage: SFSymbols.settings)
 
         return UINavigationController(rootViewController: settingsVC
         )

@@ -26,7 +26,7 @@ class GFThemeCard: UIView {
     }
 
     private func configureUIView() {
-        titleLabel.text = "Dark Theme"
+        titleLabel.text = NSLocalizedString("dark_theme", comment: "")
         backgroundColor = .secondarySystemBackground
         layer.cornerRadius = 10
         clipsToBounds = true
@@ -54,9 +54,9 @@ class GFThemeCard: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
         ])
-        
+
         toggle.isOn = PersistenceManager.isDarkTheme()
-        
+
         toggle.addTarget(self, action: #selector(switchOnChanged), for: .valueChanged)
     }
 

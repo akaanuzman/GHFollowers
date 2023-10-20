@@ -13,25 +13,27 @@ protocol GFFollowerItemVCDelegate: AnyObject {
 }
 
 class GFFollwerItemVC: GFItemInfoVC {
-    
     weak var delegate: GFFollowerItemVCDelegate!
 
-    init(user: User ,delegate: GFFollowerItemVCDelegate) {
+    init(user: User, delegate: GFFollowerItemVCDelegate) {
         super.init(user: user)
         self.delegate = delegate
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
     }
-    
+
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .followers, withCount: user.followers)
         itemInfoViewTwo.set(itemInfoType: .following, withCount: user.following)
-        actionButton.set(color: .systemGreen, title: "Get Followers", systemImage: SFSymbols.following!)
+        actionButton.set(
+            color: .systemGreen,
+            title: NSLocalizedString("get_followers", comment: ""),
+            systemImage: SFSymbols.following!)
     }
-    
+
     override func actionButtonTapped() {
         delegate.didTapGetFollwers(for: user)
     }

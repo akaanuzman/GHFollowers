@@ -42,8 +42,8 @@ class GFUserInfoHeaderVC: UIViewController {
         }
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
-        locationLabel.text = user.location ?? "No Location"
-        bioLabel.text = user.bio ?? "No bio available"
+        locationLabel.text = user.location ?? NSLocalizedString("no_location", comment: "")
+        bioLabel.text = user.bio ?? NSLocalizedString("no_bio", comment: "")
         bioLabel.numberOfLines = 3
         
         locationImageView.image = SFSymbols.location

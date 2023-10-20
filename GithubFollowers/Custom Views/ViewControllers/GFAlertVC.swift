@@ -11,7 +11,10 @@ class GFAlertVC: UIViewController {
     let containerView = GFAlertContainerView()
     let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(textAlignment: .center)
-    let actionButton = GFButton(color: .systemPink, title: "OK", systemImage: SFSymbols.ok!)
+    let actionButton = GFButton(
+        color: .systemPink,
+        title: NSLocalizedString("ok", comment: ""),
+        systemImage: SFSymbols.ok!)
     
     var alertTitle: String?
     var message: String?
@@ -42,7 +45,6 @@ class GFAlertVC: UIViewController {
     }
     
     func configureContainerView() {
-
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -52,7 +54,7 @@ class GFAlertVC: UIViewController {
     }
     
     func configureTitleLabel() {
-        titleLabel.text = alertTitle ?? "Somenthing went wrong"
+        titleLabel.text = alertTitle ?? NSLocalizedString("something_wrong", comment: "")
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
@@ -63,7 +65,9 @@ class GFAlertVC: UIViewController {
     }
     
     func configureActionButton() {
-        actionButton.setTitle(buttonTitle ?? "OK", for: .normal)
+        actionButton.setTitle(
+            buttonTitle ?? NSLocalizedString("ok", comment: ""),
+            for: .normal)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
@@ -75,7 +79,7 @@ class GFAlertVC: UIViewController {
     }
     
     func configureMessageLabel() {
-        messageLabel.text = message ?? "Unable to complate request"
+        messageLabel.text = message ?? NSLocalizedString("unable_to_request", comment: "")
         messageLabel.numberOfLines = 4
         
         NSLayoutConstraint.activate([

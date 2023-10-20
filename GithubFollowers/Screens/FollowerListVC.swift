@@ -66,29 +66,15 @@ class FollowerListVC: GFDataLoadingVC {
             } catch {
                 dismissLoadingView()
                 if let gfError = error as? GFError {
-                    presentGFAlert(title: "Something Went Wrong",
-                                   message: gfError.rawValue,
-                                   buttonTitle: "Ok")
+                    presentGFAlert(
+                        title: NSLocalizedString("something_wrong", comment: ""),
+                        message: gfError.rawValue,
+                        buttonTitle: NSLocalizedString("ok", comment: ""))
                 } else {
                     presentDefaultGFAlert()
                 }
             }
         }
-        
-//        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-//            guard let self = self else { return }
-//            self.dismissLoadingView()
-//
-//            switch result {
-//            case .success(let user):
-//                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-//
-//                self.addFollowerToFavoriteList(on: favorite)
-//
-//            case .failure(let error):
-//                self.presentGFAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-//            }
-//        }
     }
     
     private func configureCollectionView() {
@@ -103,7 +89,7 @@ class FollowerListVC: GFDataLoadingVC {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
 
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = NSLocalizedString("search_username", comment: "")
         searchController.obscuresBackgroundDuringPresentation = false // When Searchcontroller is clicked, removes light dimming applied to CollectionView
         navigationItem.searchController = searchController
     }
@@ -119,7 +105,10 @@ class FollowerListVC: GFDataLoadingVC {
                 dismissLoadingView()
             } catch {
                 if let gfError = error as? GFError {
-                    presentGFAlert(title: "Bad Stuff Happend", message: gfError.rawValue, buttonTitle: "Ok")
+                    presentGFAlert(
+                        title: NSLocalizedString("bad_stuff", comment: ""),
+                        message: gfError.rawValue,
+                        buttonTitle: NSLocalizedString("ok", comment: ""))
                 } else {
                     presentDefaultGFAlert()
                 }
@@ -133,7 +122,7 @@ class FollowerListVC: GFDataLoadingVC {
         self.followers.append(contentsOf: followers)
         
         if self.followers.isEmpty {
-            let message = "This user dosen't have any followers. Go follow them 😀"
+            let message = NSLocalizedString("doesnt_any_followers", comment: "")
             DispatchQueue.main.async {
                 self.navigationItem.hidesSearchBarWhenScrolling = true
                 self.showEmptyStateView(with: message, in: self.view)

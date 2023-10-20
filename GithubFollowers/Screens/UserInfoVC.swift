@@ -92,9 +92,10 @@ class UserInfoVC: UIViewController {
                 favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
             } catch {
                 if let gfError = error as? GFError {
-                    presentGFAlert(title: "Something Went Wrong",
-                                   message: gfError.rawValue,
-                                   buttonTitle: "Ok")
+                    presentGFAlert(
+                        title: NSLocalizedString("something_wrong", comment: ""),
+                        message: gfError.rawValue,
+                        buttonTitle: NSLocalizedString("ok", comment: ""))
                 } else {
                     presentDefaultGFAlert()
                 }
@@ -122,7 +123,10 @@ class UserInfoVC: UIViewController {
 
     @objc private func addButtonTapped() {
         guard let favorite = favorite else {
-            presentGFAlert(title: "Something went wrong!", message: "", buttonTitle: "Ok")
+            presentGFAlert(
+                title: NSLocalizedString("something_wrong", comment: ""),
+                message: "",
+                buttonTitle: NSLocalizedString("ok", comment: ""))
             return
         }
 
@@ -137,7 +141,10 @@ extension UserInfoVC: GFRepoItemVCDelegate {
 extension UserInfoVC: GFFollowerItemVCDelegate {
     func didTapGetFollwers(for user: User) {
         guard user.followers != 0 else {
-            presentGFAlert(title: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
+            presentGFAlert(
+                title: NSLocalizedString("no_followers", comment: ""),
+                message: NSLocalizedString("has_no_followers", comment: ""),
+                buttonTitle: NSLocalizedString("so_sad", comment: ""))
             return
         }
 

@@ -5,3 +5,44 @@
   Created by Kaan Uzman on 20/10/23.
   
 */
+//  TabBar Titles
+"search"="Ara";
+"favorites"="Favoriler";
+"settings"="Ayarlar";
+
+// TextFields
+"enter_username"= "Kullanıcı adı girin";
+"search_username"= "Kullanıcı arayın";
+
+// Buttons
+"get_followers"="Takipçileri getir";
+"ok" = "TAMAM";
+"hooray"="Yuppi!";
+"so_sad"= "Çok üzücü";
+
+
+// Alerts
+"empty_username"="Boş kullanıcı adı";
+"empty_username_message"="Lütfen kullanıcı adı giriniz. Kimi arayacağımızı bilmemiz gerekiyor 😀";
+"something_wrong"="Bir şeyler ters gitti!";
+"bad_stuff"="Kötü Şeyler";
+"doesnt_any_followers"="Bu kullanıcının hiç takipçisi yok. Git onları takip et 😀";
+"success"="Başarılı!";
+"success_added_user" ="Bu kullanıcıyı başarıyla favorilere eklediniz 🎉";
+"no_followers"="Takipçi yok";
+"has_no_followers"="Bu kullanıcının hiç takipçisi yok. Ne kadar utanç verici 😞.";
+"unable_to_remove"= "Kaldırılamıyor";
+"unable_to_request"="Talep tamamlanamıyor";
+
+"no_location"="Konum yok";
+"no_bio"="Ulaşılabilir biografi yok";
+"github_profile"="GitHub Profili";
+"dark_theme"="Karanlık Tema";
+"language"="Dil";
+"public_repos"="Açık Depolar";
+"public_gists"="Açık Gistler";
+"followers"="Takipçiler";
+"following"="Takip Edilenler";
+
+// Empty State
+"has_no_favorites"="Favoriniz yok mu? \nTakipçi ekranından bir tane ekleyin";
