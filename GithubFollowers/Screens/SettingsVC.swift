@@ -28,6 +28,8 @@ class SettingsVC: UIViewController {
 
         themeCard.translatesAutoresizingMaskIntoConstraints = false
         languageCard.translatesAutoresizingMaskIntoConstraints = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(uiViewOnTapped))
+        languageCard.addGestureRecognizer(tapGesture)
 
         let padding: CGFloat = 20
         let height: CGFloat = 60
@@ -43,5 +45,12 @@ class SettingsVC: UIViewController {
             languageCard.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             languageCard.heightAnchor.constraint(equalToConstant: height)
         ])
+    }
+    
+    @objc private func uiViewOnTapped() {
+        let changeLanguageVC = ChangeLanguageVC()
+        changeLanguageVC.modalPresentationStyle = .overFullScreen
+        changeLanguageVC.modalTransitionStyle = .crossDissolve
+        navigationController?.pushViewController(changeLanguageVC, animated: true)
     }
 }

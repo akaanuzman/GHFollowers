@@ -10,8 +10,6 @@
 		F107A1CC2AA1313100A43B12 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A1CB2AA1313100A43B12 /* Images.swift */; };
 		F107A1CE2AA1690200A43B12 /* GFAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A1CD2AA1690200A43B12 /* GFAlertContainerView.swift */; };
 		F107A1D02AA16F8F00A43B12 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F107A1CF2AA16F8F00A43B12 /* GFDataLoadingVC.swift */; };
-		F1102F7B2AE317EC0080823E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1102F7D2AE317EC0080823E /* Localizable.strings */; };
-		F1102F872AE318580080823E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1102F892AE318580080823E /* Localizable.strings */; };
 		F130900A2AB6710100E1B2C3 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13090092AB6710100E1B2C3 /* UITableView+Ext.swift */; };
 		F1320D4C2AB8974E00D930B2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1320D4B2AB8974E00D930B2 /* SettingsVC.swift */; };
 		F13F07B22A8AC9E600848C7B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F07B12A8AC9E600848C7B /* NetworkManager.swift */; };
@@ -37,6 +35,9 @@
 		F186DF082A9ABD2F00D49238 /* URLSchemeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186DF072A9ABD2E00D49238 /* URLSchemeTypes.swift */; };
 		F1960D072A9430C0005BA238 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1960D062A9430C0005BA238 /* GFEmptyStateView.swift */; };
 		F19893742A8EDC5A00572DDD /* FollowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19893732A8EDC5A00572DDD /* FollowerView.swift */; };
+		F1A9F2832B0FF448008FAC25 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1A9F2822B0FF448008FAC25 /* Localizable.xcstrings */; };
+		F1A9F2852B0FF48D008FAC25 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1A9F2842B0FF48D008FAC25 /* InfoPlist.xcstrings */; };
+		F1A9F2872B0FF97C008FAC25 /* ChangeLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9F2862B0FF97C008FAC25 /* ChangeLanguageVC.swift */; };
 		F1C5250F2ABBAAF600345DFE /* GFThemeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5250E2ABBAAF600345DFE /* GFThemeCard.swift */; };
 		F1C525112ABBC26200345DFE /* GFLanguageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C525102ABBC26200345DFE /* GFLanguageCard.swift */; };
 		F1C574482AA52CDA004DDD1D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C574472AA52CDA004DDD1D /* UIView+Ext.swift */; };
@@ -59,9 +60,7 @@
 		F107A1CB2AA1313100A43B12 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F107A1CD2AA1690200A43B12 /* GFAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainerView.swift; sourceTree = "<group>"; };
 		F107A1CF2AA16F8F00A43B12 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
-		F1102F7C2AE317EC0080823E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1102F832AE318260080823E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F1102F882AE318580080823E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1102F8A2AE326940080823E /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = tr; path = tr.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F13090092AB6710100E1B2C3 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F1320D4B2AB8974E00D930B2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -88,6 +87,9 @@
 		F186DF072A9ABD2E00D49238 /* URLSchemeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemeTypes.swift; sourceTree = "<group>"; };
 		F1960D062A9430C0005BA238 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		F19893732A8EDC5A00572DDD /* FollowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerView.swift; sourceTree = "<group>"; };
+		F1A9F2822B0FF448008FAC25 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F1A9F2842B0FF48D008FAC25 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		F1A9F2862B0FF97C008FAC25 /* ChangeLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageVC.swift; sourceTree = "<group>"; };
 		F1C5250E2ABBAAF600345DFE /* GFThemeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFThemeCard.swift; sourceTree = "<group>"; };
 		F1C525102ABBC26200345DFE /* GFLanguageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFLanguageCard.swift; sourceTree = "<group>"; };
 		F1C574472AA52CDA004DDD1D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -121,8 +123,7 @@
 		F1102F782AE317BF0080823E /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				F1102F7D2AE317EC0080823E /* Localizable.strings */,
-				F1102F892AE318580080823E /* Localizable.strings */,
+				F1A9F2822B0FF448008FAC25 /* Localizable.xcstrings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -283,6 +284,7 @@
 				F17C4B3F2A88502B002401E6 /* FollowerListVC.swift */,
 				F1D591A52A96E22C007EBC89 /* UserInfoVC.swift */,
 				F1320D4B2AB8974E00D930B2 /* SettingsVC.swift */,
+				F1A9F2862B0FF97C008FAC25 /* ChangeLanguageVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -311,6 +313,7 @@
 				F1E4B0262A83030B003BE4B0 /* Assets.xcassets */,
 				F1E4B0282A83030B003BE4B0 /* LaunchScreen.storyboard */,
 				F1E4B02B2A83030B003BE4B0 /* Info.plist */,
+				F1A9F2842B0FF48D008FAC25 /* InfoPlist.xcstrings */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -424,8 +427,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E4B02A2A83030B003BE4B0 /* LaunchScreen.storyboard in Resources */,
-				F1102F872AE318580080823E /* Localizable.strings in Resources */,
-				F1102F7B2AE317EC0080823E /* Localizable.strings in Resources */,
+				F1A9F2832B0FF448008FAC25 /* Localizable.xcstrings in Resources */,
+				F1A9F2852B0FF48D008FAC25 /* InfoPlist.xcstrings in Resources */,
 				F1E4B0272A83030B003BE4B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +476,7 @@
 				F107A1D02AA16F8F00A43B12 /* GFDataLoadingVC.swift in Sources */,
 				F1DC11222AA0093200CBBA82 /* GFTabBarControler.swift in Sources */,
 				F186DF032A9AB0AD00D49238 /* Date+Ext.swift in Sources */,
+				F1A9F2872B0FF97C008FAC25 /* ChangeLanguageVC.swift in Sources */,
 				F1662E452A9816090079697B /* SFSymbols.swift in Sources */,
 				F17C4B402A88502B002401E6 /* FollowerListVC.swift in Sources */,
 				F107A1CE2AA1690200A43B12 /* GFAlertContainerView.swift in Sources */,
@@ -485,22 +489,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1102F7D2AE317EC0080823E /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1102F7C2AE317EC0080823E /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F1102F892AE318580080823E /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1102F882AE318580080823E /* tr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		F1E4B0282A83030B003BE4B0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

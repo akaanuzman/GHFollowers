@@ -1,5 +1,18 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "GithubFollowers"
+          }
+        }
+      }
+    }
+  },
   "version" : "1.0"
 }

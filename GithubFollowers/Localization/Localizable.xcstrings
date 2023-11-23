@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "bad_stuff" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -18,8 +17,24 @@
         }
       }
     },
+    "choose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose..."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seç..."
+          }
+        }
+      }
+    },
     "dark_theme" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -36,7 +51,6 @@
       }
     },
     "doesnt_any_followers" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -54,7 +68,6 @@
     },
     "empty_username" : {
       "comment" : "Alerts",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -71,7 +84,6 @@
       }
     },
     "empty_username_message" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -87,9 +99,25 @@
         }
       }
     },
+    "english" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İngilizce"
+          }
+        }
+      }
+    },
     "enter_username" : {
       "comment" : "TextFields",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -106,7 +134,6 @@
       }
     },
     "favorites" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -123,7 +150,6 @@
       }
     },
     "followers" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -140,7 +166,6 @@
       }
     },
     "following" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -158,7 +183,6 @@
     },
     "get_followers" : {
       "comment" : "Buttons",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -175,7 +199,6 @@
       }
     },
     "github_profile" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -193,7 +216,6 @@
     },
     "has_no_favorites" : {
       "comment" : "Empty State",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -210,7 +232,6 @@
       }
     },
     "has_no_followers" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -227,7 +248,6 @@
       }
     },
     "hooray" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -244,7 +264,6 @@
       }
     },
     "language" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -261,7 +280,6 @@
       }
     },
     "no_bio" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -278,7 +296,6 @@
       }
     },
     "no_followers" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -295,7 +312,6 @@
       }
     },
     "no_location" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -312,7 +328,6 @@
       }
     },
     "ok" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -329,7 +344,6 @@
       }
     },
     "public_gists" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -346,7 +360,6 @@
       }
     },
     "public_repos" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -364,7 +377,6 @@
     },
     "search" : {
       "comment" : "TabBar Titles",
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -381,7 +393,6 @@
       }
     },
     "search_username" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -397,8 +408,24 @@
         }
       }
     },
+    "select_language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Language"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dil Seçin"
+          }
+        }
+      }
+    },
     "settings" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -415,7 +442,6 @@
       }
     },
     "so_sad" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -432,7 +458,6 @@
       }
     },
     "something_wrong" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -449,7 +474,6 @@
       }
     },
     "success" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -466,7 +490,6 @@
       }
     },
     "success_added_user" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -482,8 +505,24 @@
         }
       }
     },
+    "turkish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turkish"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Türkçe"
+          }
+        }
+      }
+    },
     "unable_to_remove" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -500,7 +539,6 @@
       }
     },
     "unable_to_request" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "en" : {
           "stringUnit" : {

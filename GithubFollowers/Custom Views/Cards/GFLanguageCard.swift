@@ -34,11 +34,8 @@ class GFLanguageCard: UIView {
         clipsToBounds = true
         backgroundColor = .secondarySystemBackground
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(uiViewOnTapped))
-        addGestureRecognizer(tapGesture)
-        
         titleLabel.text = NSLocalizedString("language", comment: "")
-        secondaryTitleLabel.text = "Choose.."
+        secondaryTitleLabel.text = NSLocalizedString("choose", comment: "")
     }
     
     private func configureImageView() {
@@ -69,9 +66,5 @@ class GFLanguageCard: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding)
         ])
-    }
-    
-    @objc private func uiViewOnTapped() {
-        print("tapped...")
     }
 }
