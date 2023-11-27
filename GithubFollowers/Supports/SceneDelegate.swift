@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = GFTabBarControler()
+        let rootVC = GFTabBarControler()
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
 
         windowScene.windows.forEach {

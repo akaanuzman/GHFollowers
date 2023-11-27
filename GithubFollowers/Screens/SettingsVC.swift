@@ -48,9 +48,9 @@ class SettingsVC: UIViewController {
     }
     
     @objc private func uiViewOnTapped() {
-        let changeLanguageVC = ChangeLanguageVC()
-        changeLanguageVC.modalPresentationStyle = .overFullScreen
-        changeLanguageVC.modalTransitionStyle = .crossDissolve
-        navigationController?.pushViewController(changeLanguageVC, animated: true)
+        let languageSelectionVC = LanguageSelectionVC()
+        languageSelectionVC.modalPresentationStyle = .overFullScreen
+        languageSelectionVC.modalTransitionStyle = .crossDissolve
+        navigationController?.pushViewController(languageSelectionVC, animated: true)
     }
 }

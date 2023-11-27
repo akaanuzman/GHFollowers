@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NetworkManager {
+final class NetworkManager {
     static let shared = NetworkManager()
     private let baseUrl: String = "https://api.github.com/users/"
     let cache = NSCache<NSString, UIImage>()

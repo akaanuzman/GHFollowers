@@ -70,11 +70,32 @@ enum PersistenceManager {
 
     static func setDarkTheme(to isDark: Bool) {
         print("Setting dark theme to \(isDark)")
-        
+
         defaults.set(isDark, forKey: Keys.darkTheme)
     }
 
     static func isDarkTheme() -> Bool {
         return defaults.bool(forKey: Keys.darkTheme)
+    }
+
+    static func changeLanguage(to language: String) {
+        defaults.set([language], forKey: "AppleLanguages")
+        LanguageManager.shared.currentLanguage = getCurrentLanguage()
+        print(language)
+        let locale = Locale(identifier: language == "tr-US" ? "tr" : "en")
+        guard let path = Bundle.main.path(forResource: locale.identifier, ofType: "lproj")
+        else { return }
+        let localizedBundle = Bundle(path: path)
+        localizedBundle?.localizedString(forKey: "", value: "", table: nil)
+        defaults.synchronize()
+    }
+
+    static func getCurrentLanguage() -> [String] {
+        let cachedLanguage = defaults.stringArray(forKey: "AppleLanguages")
+        if let currentLanguage = cachedLanguage {
+            return currentLanguage
+        }
+
+        return ["en"]
     }
 }

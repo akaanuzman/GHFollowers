@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+final class LanguageManager {
+    static let shared = LanguageManager()
+    lazy var currentLanguage: [String] = PersistenceManager.getCurrentLanguage()
+
+    private init() {}
+}

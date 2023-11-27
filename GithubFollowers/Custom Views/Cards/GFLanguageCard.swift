@@ -35,12 +35,15 @@ class GFLanguageCard: UIView {
         backgroundColor = .secondarySystemBackground
         
         titleLabel.text = NSLocalizedString("language", comment: "")
-        secondaryTitleLabel.text = NSLocalizedString("choose", comment: "")
+        let currentLanguage = LanguageManager.shared.currentLanguage
+        print("\(currentLanguage) *****")
+        let secondaryTitleLabelText = currentLanguage[0] == "tr-US" ? "turkish" : "english"
+        secondaryTitleLabel.text = NSLocalizedString(secondaryTitleLabelText, comment: "")
     }
     
     private func configureImageView() {
         trailingImageView.image = trailingImage
-        trailingImageView.tintColor =  .label
+        trailingImageView.tintColor = .label
     }
     
     private func configureStackView(for view: UIStackView, isFirst: Bool = true) {

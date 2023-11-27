@@ -1,16 +1,13 @@
 import UIKit
 
-class ChangeLanguageVC: UIViewController {
-
+class LanguageSelectionVC: UIViewController {
     let languageTableView = UITableView()
-    let supportedLanguages = ["en", "tr"]
+    let supportedLanguages = ["en-US", "tr-US"]
     let supportedLangList = [NSLocalizedString("english", comment: ""), NSLocalizedString("turkish", comment: "")]
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+
         setupUI()
     }
 
@@ -40,12 +37,13 @@ class ChangeLanguageVC: UIViewController {
     func changeLanguage(_ selectedLanguage: String) {
         print("Selected Language: \(selectedLanguage)")
 
-        UserDefaults.standard.set([selectedLanguage], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
+        PersistenceManager.changeLanguage(to: selectedLanguage)
+    
+        navigationController?.popViewController(animated: true)
     }
 }
 
-extension ChangeLanguageVC: UITableViewDataSource, UITableViewDelegate {
+extension LanguageSelectionVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return supportedLangList.count
     }
@@ -53,6 +51,16 @@ extension ChangeLanguageVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath)
         cell.textLabel?.text = supportedLangList[indexPath.row]
+        cell.tintColor = .systemGreen
+
+        let currentLanguage = LanguageManager.shared.currentLanguage
+        if supportedLanguages[indexPath.row] == currentLanguage[0] {
+            cell.accessoryType = .checkmark
+
+        } else {
+            cell.accessoryType = .none
+        }
+
         return cell
     }
 
