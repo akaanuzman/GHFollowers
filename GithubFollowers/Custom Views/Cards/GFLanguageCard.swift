@@ -36,7 +36,6 @@ class GFLanguageCard: UIView {
         
         titleLabel.text = NSLocalizedString("language", comment: "")
         let currentLanguage = LanguageManager.shared.currentLanguage
-        print("\(currentLanguage) *****")
         let secondaryTitleLabelText = currentLanguage[0] == "tr-US" ? "turkish" : "english"
         secondaryTitleLabel.text = NSLocalizedString(secondaryTitleLabelText, comment: "")
     }

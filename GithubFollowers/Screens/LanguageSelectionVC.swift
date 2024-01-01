@@ -3,7 +3,10 @@ import UIKit
 class LanguageSelectionVC: UIViewController {
     let languageTableView = UITableView()
     let supportedLanguages = ["en-US", "tr-US"]
-    let supportedLangList = [NSLocalizedString("english", comment: ""), NSLocalizedString("turkish", comment: "")]
+    let supportedLangList = [
+        NSLocalizedString("english", comment: ""),
+        NSLocalizedString("turkish", comment: ""),
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +41,8 @@ class LanguageSelectionVC: UIViewController {
         print("Selected Language: \(selectedLanguage)")
 
         PersistenceManager.changeLanguage(to: selectedLanguage)
-    
-        navigationController?.popViewController(animated: true)
+
+//        navigationController?.popViewController(animated: true)
     }
 }
 
